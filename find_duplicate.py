@@ -8,5 +8,5 @@ def find_duplicate(arr):
         seen.add(num)
     return None
 
-arr=[1,4,3,2,5,4,5]
+arr=[1,4,3,2,5,4]
 print(find_duplicate(arr))
