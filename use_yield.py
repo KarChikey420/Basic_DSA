@@ -5,6 +5,7 @@ def read_generate(limit):
             yield num
         num+=1
         
+        
 for value in read_generate(10):
     print(value)
 
