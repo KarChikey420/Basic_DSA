@@ -4,6 +4,5 @@
 dictonary={"name": "Alice",
            "age": 20}
 
-dictonary["grade"]="A"
-
+dictonary['grade']='A'
 print(dictonary)
