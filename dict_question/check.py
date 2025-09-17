@@ -3,7 +3,7 @@
 
 dictonary={"name": "Raj", "age": 28}
 
-if "salary" in dictonary:
+if 'salary' in dictonary:
     print("exist")
 else:
-    print("not exist")
+    print("not")
