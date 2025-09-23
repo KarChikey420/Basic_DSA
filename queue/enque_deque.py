@@ -14,8 +14,12 @@ class Queue:
     def display(self):
         return self.values
     
+    def peek(self):
+        return self.values[0]
+    
 q=Queue([1,2,3,4,5])
 q.enqueue(6)
 print(q.display())
 q.dequeue()
 print(q.display())
+print(q.peek())
