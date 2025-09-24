@@ -4,6 +4,7 @@ class Queue:
         
     def enqueue(self,value):
         self.values.append(value)
+        return self.values
         
     def dequeue(self):
         return self.values.pop(0)

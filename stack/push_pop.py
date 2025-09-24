@@ -1,22 +1,28 @@
 class Stack:
     def __init__(self):
-        self.values=[]
+        self.values = []
         
-    def push(self,value):
-        self.values=[value]+self.values
+    def push(self, value):
+        self.values.append(value)
         return self.values
     
     def pop(self):
-        self.values=self.values.pop(0)
-        return self.values
+        if not self.values:
+            return "Stack is empty"
+        return self.values.pop()
     
     def display(self):
         return self.values
 
-s=Stack()
+
+s = Stack()
 s.push(1)
 s.push(2)
 s.push(3)
-print(s.display())
+print(s.display())  
+
 s.pop()
-print(s.display())
+print(s.display()) 
+
+s.push(4)
+print(s.display()) 
