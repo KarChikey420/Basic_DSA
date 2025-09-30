@@ -1,11 +1,13 @@
 def prime_or_not(num):
   if num<=1:
-    return False
+      return False
   
   for i in range(2,num):
-    if num%i==0:
-      return False
+      if num%i==0:
+        return False
     
-  return True
-
-print(prime_or_not(5))
+  if num%num==0:
+     return True
+   
+print(prime_or_not(1))
+    
