@@ -1,15 +1,7 @@
-# num=10
-# feb=[0,1]
-
-# for i in range(2,num):
-#     feb.append(feb[i-1]+feb[i-2])
+def febbo(num):
+    feb=[0,1]
+    for i in range(2,num):
+        feb.append(feb[i-1]+feb[i-2])
+    return feb
+print(febbo(10))
     
-# print(feb)
-
-num=10
-feb=[0,1]
-
-for i in range(2,num):
-    feb.append(feb[i-1]+feb[i-2])
-
-print(feb)
