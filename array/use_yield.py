@@ -1,12 +1,6 @@
-def read_generate(limit):
-    num=0
-    while num<=limit:
-        if num % 2==0:
-            yield num
-        num+=1
-        
-        
-for value in read_generate(10):
-    print(value)
+def generator_function(num):
+    for i in range(1,num+1):
+        if i%2==0:
+            yield i
 
-    
+print(list(generator_function(10)))
