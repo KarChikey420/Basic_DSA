@@ -1,23 +1,7 @@
-# #using empty string 
+my_string="kartikey"
+reverse=''
 
-# char="python"
-# char1=""
-
-# for i in char:
-#     char1=i+char1
+for i in my_string:
+    reverse=i+reverse
+print(reverse)
     
-# print(char1)
-
-# #using slicing 
-
-# char="python"
-# char1=char[::-1]
-# print(char1)
-
-my_char='kartikey'
-char=''
-
-for i in my_char:
-    char=i + char
-    
-print(char)
