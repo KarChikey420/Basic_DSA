@@ -1,7 +1,9 @@
-my_string="kartikey"
-reverse=''
-
-for i in my_string:
-    reverse=i+reverse
-print(reverse)
+def reverse(str):
+    reverse_str=''
     
+    for i in str:
+        reverse_str=i+reverse_str
+    return reverse_str
+
+str=input("Enter a stirng: ")
+print("reversed string is:",reverse(str))
