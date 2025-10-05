@@ -1,4 +1,4 @@
-def binary_search(arr,target):
+def binary(arr,target):
     low=0
     high=len(arr)-1
     
@@ -7,12 +7,10 @@ def binary_search(arr,target):
         
         if arr[mid]==target:
             return mid
-        elif arr[mid]>target:
-            high=mid-1
-        else:
+        elif arr[mid]<target:
             low=mid+1
+        else:
+            high=mid-1
     return -1
 
-arr=[1,2,3,4,5,6,7]
-target=5
-print(binary_search(arr,target))
+print(binary([1,2,3,4,5,6],5))
