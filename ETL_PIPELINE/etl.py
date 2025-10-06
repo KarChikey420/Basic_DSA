@@ -19,4 +19,4 @@ query="select * from student"
 df=pd.read_sql_query(query,source)
 
 df.to_sql("student",dest,if_exists='replace',index=False)
-
+ 
