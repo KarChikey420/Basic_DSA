@@ -25,12 +25,24 @@
 
 #remove duplicates
 
-def remove_duplicate(arr):
-    result=[]
+# def remove_duplicate(arr):
+#     result=[]
     
-    for item in arr:
-        if item not in result:
-            result.append(item)
-    return result
-arr=[1,2,1,3,2,4]               
-print(remove_duplicate(arr))
+#     for item in arr:
+#         if item not in result:
+#             result.append(item)
+#     return result
+# arr=[1,2,1,3,2,4]               
+# print(remove_duplicate(arr))
+
+def removed_dupli(arr):
+    k=1
+    for i in range(1,len(arr)):
+        if arr[i]!=arr[i-1]:
+            arr[k]=arr[i]
+            k+=1
+        return k
+    
+arr=[1,2,1,3,2,4]
+k=removed_dupli(arr)
+print(arr[:k])
