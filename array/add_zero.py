@@ -1,9 +1,11 @@
-def plusOne(digits):
-        n=len(digits)
+def add_zero(nums):
+    n=len(nums)
+    
+    for i  in range(n-1,-1,-1):
+        if nums[i]<9:
+            nums[i]+=1
+        return nums
+    
+    return [1]+[0]*n
 
-        for i in range(n-1,-1,-1):
-            if digits[i]<9:
-                digits[i]+=1
-                return digits
-            digits[i]=0
-        return [1]+[0]*n
+print(add_zero([1,2,3]))
