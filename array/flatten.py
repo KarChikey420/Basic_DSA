@@ -1,13 +1,10 @@
-def flatten(arr):
-    result=[]
-    
-    for i in arr:
+def flatten(list1):
+    list2=[]
+    for i in list1:
         if isinstance(i,list):
-            result.extend(i)
+            list2.extend(flatten(i))
         else:
-            result.append(i)
-    
-    result.sort()
-    return result
+            list2.append(i)
+    return list2
 
-print(flatten([1,2,3,[2,5],[2,9,8]]))
+print(flatten([1,2,[3,4,[5,6]]]))
