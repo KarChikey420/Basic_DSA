@@ -18,3 +18,5 @@ create_engine='postgresql://postgres:root@localhost:5432/mydb'
 
 df.to_sql('student',create_engine,if_exists='replace',index=False)
 
+conn.commit()
+conn.close()
