@@ -1,22 +1,20 @@
-import psycopg2
 import pandas as pd
 from sqlalchemy import create_engine
+import psycopg2
 
-source=psycopg2.connect(
-    host="localhost",
-    database="mydb",
-    user="postgres",
-    password="root"  
+conn = psycopg2.connect(
+    user='postgres',
+    password='root',
+    host='localhost',
+    database='mydb'
 )
 
-dest=create_engine('postgresql://postgres:root@localhost:5432/mydb1')
-print("database")
+cur=conn.cursor()
 
-cur=source.cursor()
+df=pd.read_sql_query('select * from student',conn)
+df.head()
 
-query="select * from student"
+create_engine='postgresql://postgres:root@localhost:5432/mydb'
 
-df=pd.read_sql_query(query,source)
+df.to_sql('student',create_engine,if_exists='replace',index=False)
 
-df.to_sql("student",dest,if_exists='replace',index=False)
- 
