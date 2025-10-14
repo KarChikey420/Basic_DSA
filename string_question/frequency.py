@@ -1,13 +1,10 @@
-def count_freq():
-    str1=input("enter the sentance:")
-    list1=str1.split()
+def get_freq(s):
     freq={}
-    
-    for i in list1:
+    for i in s:
         if i in freq:
             freq[i]+=1
         else:
             freq[i]=1
-    print(freq)
-    
-count_freq()
+    return freq
+
+print(get_freq("aaabbbccc"))
