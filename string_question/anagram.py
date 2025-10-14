@@ -1,14 +1,12 @@
 from collections import Counter
+
 def anagram(str1,str2):
-    sort_str1=Counter(str1)
-    sort_str2=Counter(str2)
+    sort_str1=sorted(str1)
+    sort_str2=sorted(str2)
     
-    if sort_str1==sort_str2:
-        print("anagrams")
+    if Counter(sort_str1)==Counter(sort_str2):
+        return True
     else:
-        print("not a anagram")
+        return False
     
-        
-str1="listen"
-str2="silent"
-anagram(str1,str2)
+print(anagram('abc','cba'))
