@@ -3,42 +3,38 @@ class Node:
         self.data=data
         self.left=None
         self.right=None
-
-def Binary_Tree(root,key):
+        
+def inorder(root):
     if root is None:
-        return Node(key)
-    if key<root.data:
-        root.left=Binary_Tree(root.left,key)
-    else:
-        root.right=Binary_Tree(root.right,key)
+        return
+    inorder(root.left)
+    print(root.data,end="")
+    inorder(root.right)
     return root
 
-def inorder(node):
-    if node:
-        inorder(node.left)
-        print(node.data,end='')        
-        inorder(node.right)
-        
-def preoder(node):
-    if node:
-        print(node.data,end='')
-        preoder(node.left)
-        preoder(node.right)
-        
-def postorder(node):
-    if node:
-        postorder(node.left)
-        postorder(node.right)
-        print(node.data,end='')
-        
-number=[1,2,3,4,5,6,7,8]
-root=None
-for num in number:
-    root=Binary_Tree(root,num)
+def preorder(root):
+    if root is None:
+        return
+    preorder(root.left)
+    preorder(root.right)
+    print(root.data, end="")
+    return root
 
-print('inorder')
+def postorder(root):
+    if root is None:
+        return
+    print(root.data, end="")
+    postorder(root.left)
+    postorder(root.right)
+    return root     
+
+root=Node(1)
+root.left=Node(2)
+root.right=Node(3)
+root.left.left=Node(4)
+root.left.right=Node(5)
+root.right.left=Node(6)
+
 inorder(root)
-print('\npreorder')
-preoder(root)
-print('\npostorder')
+preorder(root)
 postorder(root)
