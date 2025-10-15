@@ -1,11 +1,10 @@
 def consecutive(arr):
-    arr.sort()
+    list1=[]
     for i in range(len(arr)-1):
-        if arr[i+1]!=arr[i]+1:
-            return arr[i]+1
-        # if i+1 not in arr:
-        #     return i
-    return "all elements are consecutive"
+        current=arr[i]
+        next=arr[i+1]
+        for n in range(current+1,next):
+            list1.append(n)
+    return list1
 
-arr=[1,2,3,5,6]
-print(consecutive(arr))
+print(consecutive([1,3,5,7]))
