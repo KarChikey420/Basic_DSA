@@ -35,14 +35,24 @@
 # arr=[1,2,1,3,2,4]               
 # print(remove_duplicate(arr))
 
-def removed_dupli(arr):
-    k=1
-    for i in range(1,len(arr)):
-        if arr[i]!=arr[i-1]:
-            arr[k]=arr[i]
-            k+=1
-        return k
+# def removed_dupli(arr):
+#     k=1
+#     for i in range(1,len(arr)):
+#         if arr[i]!=arr[i-1]:
+#             arr[k]=arr[i]
+#             k+=1
+#         return k
     
+# arr=[1,2,1,3,2,4]
+# k=removed_dupli(arr)
+# print(arr[:k])
+
+def find_duplicate(arr):
+    arr.sort()
+    rm_list=[]
+    for i in range(len(arr)-1):
+        if arr[i]==arr[i+1]:
+            rm_list.append(arr[i])
+    return rm_list
 arr=[1,2,1,3,2,4]
-k=removed_dupli(arr)
-print(arr[:k])
+print(find_duplicate(arr))
