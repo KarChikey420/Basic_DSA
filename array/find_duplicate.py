@@ -49,9 +49,9 @@
 
 def find_duplicate(arr):
     arr.sort()
-    rm_list=[]
-    for i in range(len(arr)-1):
-        if arr[i]==arr[i+1]:
+    rm_list=[arr[0]]
+    for i in range(1,len(arr)):
+        if arr[i]!=arr[i-1]:
             rm_list.append(arr[i])
     return rm_list
 arr=[1,2,1,3,2,4]
