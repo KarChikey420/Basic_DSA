@@ -1,6 +1,7 @@
 def febbo(num):
-    febi=[0,1]
+    feb=[0,1]
     for i in range(2,num):
-        febi.append(febi[i-1]+febi[i-2])
-    return febi
+        feb.append(feb[i-1]+feb[i-2])
+    return feb
+    
 print(febbo(10))
