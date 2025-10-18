@@ -1,13 +1,11 @@
 def min_max(arr):
-    min=0
-    max=0
-    
+    min=arr[0]
+    max=arr[0]
     for i in range(1,len(arr)):
-        if arr[i]<arr[min]:
-            min=i
-        elif arr[i]>arr[max]:
-            max=i
-    return min,max
+        if arr[i]>max:
+            max=arr[i]
+        elif arr[i]<min:
+            min=arr[i]
+    return max,min
 
-print(min_max([2,3,5,6,8,9]))
-        
+print(min_max([1,2,4,6,7]))
