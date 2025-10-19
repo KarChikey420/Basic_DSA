@@ -1,9 +1,7 @@
-def reverse(str):
-    reverse_str=''
-    
-    for i in str:
-        reverse_str=i+reverse_str
-    return reverse_str
+def reverse(str1):
+    rev=''
+    for i in str1:
+        rev=i+rev
+    return rev
 
-str=input("Enter a stirng: ")
-print("reversed string is:",reverse(str))
+print(reverse("hello world"))
