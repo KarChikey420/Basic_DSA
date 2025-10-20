@@ -7,5 +7,5 @@ def min_max(arr):
         elif arr[i]<min:
             min=arr[i]
     return max,min
-
-print(min_max([1,2,4,6,7]))
+arr=[1,2,3,4,5]
+print(min_max(arr))
