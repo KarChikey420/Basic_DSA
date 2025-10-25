@@ -1,13 +1,13 @@
 def prime_or_not(num):
     if num<=1:
-        return False
-    
+        return False 
     for i in range(2,num):
         if num%i==0:
-            return False
-            
+           return False
     return True
 
-for i in range(0,100):
-    if prime_or_not(i):
-        print(f"{i} is prime")
+num=int(input("Enter a number")) 
+if prime_or_not(num):
+    print("prime number")
+else:
+    print("not a prime number")
