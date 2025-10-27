@@ -1,11 +1,9 @@
-def count_frequency(list1):
-    list2={}
+def frequency(list1):
+    freq={}
     for i in list1:
-        if i in list2:
-            list2[i]+=1
+        if i not in freq:
+            freq[i]+=1
         else:
-            list2[i]=1
-    return list2
-    
-list1=[1,2,3,4,1,2,3]
-print(count_frequency(list1))            
+            freq[i]=1
+    return freq
+print(frequency([1,3,2,1,2,4,5,5]))
