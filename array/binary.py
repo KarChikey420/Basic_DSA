@@ -4,7 +4,6 @@ def binary_search(arr,target):
     
     while left<=right:
         mid=(left+right)//2
-        
         if arr[mid]==target:
             return mid
         elif arr[mid]<target:
@@ -12,8 +11,4 @@ def binary_search(arr,target):
         else:
             right=mid-1
     return -1
-    
-arr=[1,2,3,4,5,6]
-target=4
-print(binary_search(arr,target))
-    
+print(binary_search([1,2,3,4,5,6],4))
