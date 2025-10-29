@@ -1,7 +1,7 @@
 def reverse(str1):
-    rev=''
+    str2=""
     for i in str1:
-        rev=i+rev
-    return rev
+        str2=i+str2
+    return str2
 
-print(reverse("hello world"))
+print(reverse("kartikey"))
