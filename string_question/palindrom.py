@@ -1,11 +1,16 @@
 def palindrom(str1):
-    rev=''
+    str2=""
     for i in str1:
-        rev=i+rev
+        str2=i+str2
     
-    if rev==str1:
+    if str1==str2:
         return True
     else:
         return False
-    
-print(palindrom("madam"))
+
+if __name__=="__main__":
+    str1=input("Enter The String:")
+    if palindrom(str1):
+        print("Number is palindrom")
+    else:
+        print("Not a palindrom")
