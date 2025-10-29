@@ -1,6 +1,8 @@
-def febbo(n):
+def febbonici(num):
     feb=[0,1]
-    for i in range(2,n):
+    for i in range(2,num):
         feb.append(feb[i-1]+feb[i-2])
     return feb
-print(febbo(10))
+
+num=int(input("Enter the num:"))
+print(febbonici(num))
