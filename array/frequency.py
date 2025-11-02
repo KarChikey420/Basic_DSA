@@ -1,9 +1,9 @@
-def frequency(list1):
+def count_freq(arr):
     freq={}
-    for i in list1:
-        if i not in freq:
+    for i in arr:
+        if i in freq:
             freq[i]+=1
         else:
             freq[i]=1
     return freq
-print(frequency([1,3,2,1,2,4,5,5]))
+print(count_freq([1,2,2,3,3,3]))
