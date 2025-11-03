@@ -21,3 +21,7 @@ def fetch_student_data(conn):
     except psycopg2.Error as e:
         print("Error fetching data:",e)
     return df
+
+def transform_data(df):
+    df_cleaned=df.dropna()
+    return df_cleaned
