@@ -14,3 +14,10 @@ def get_db_connection():
        print("Error connecting to database:",e)
    return conn
 
+def fetch_student_data(conn):
+    try:
+        query="select * from student"
+        df=pd.read_sql_query(query,conn)   
+    except psycopg2.Error as e:
+        print("Error fetching data:",e)
+    return df
