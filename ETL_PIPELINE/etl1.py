@@ -25,3 +25,17 @@ def fetch_student_data(conn):
 def transform_data(df):
     df_cleaned=df.dropna()
     return df_cleaned
+
+def load_data_to_db(df):
+    try:
+        create_engine='postgresql://postgres:root@localhost:5432/mydb'
+        df.to_sql("cleaned_student",create_engine,if_exists='replace',index=False)
+    except Exception as e:
+        print("Error loading data to database:",e)
+    print("Data loaded successfully into cleaned_student table.")
+
+if __name__=="__main__":
+    conn=get_db_connection()
+    df=fetch_student_data(conn)
+    df_cleaned=transform_data(df)
+    load_data_to_db(df_cleaned)
