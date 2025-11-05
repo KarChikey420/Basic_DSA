@@ -1,8 +1,7 @@
-def divide_half_equal(list1):
-    mid=len(list1)//2
-    first_half=list1[:mid]
-    second_half=list1[mid:]
-    
+def devide_half(arr):
+    mid=len(arr)//2
+    first_half=arr[mid:]
+    second_half=arr[:mid]
     return first_half,second_half
 
-print(divide_half_equal([1,2,4,6,7,7,8,8,9]))
+print(devide_half([1,2,3,4,5,6,7,8,9,10]))
