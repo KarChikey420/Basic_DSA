@@ -1,10 +1,10 @@
-def flatten_list(list1):
-    list2=[]
-    for i in list1:
+def flatten_list(arr):
+    arr1=[]
+    for i in arr:
         if isinstance(i,list):
-            list2.extend(flatten_list(i))
+            arr1.extend(flatten_list(i))
         else:
-            list2.append(i)
-    return list2
-    
-print(flatten_list([1,2,[3,4],[5,[6,7]],8]))
+            arr1.append(i)
+    return arr1
+
+print(flatten_list([1,2,[1,2],[3,4],8,9]))
