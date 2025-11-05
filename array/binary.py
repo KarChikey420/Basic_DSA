@@ -11,4 +11,5 @@ def binary_search(arr,target):
         else:
             right=mid-1
     return -1
-print(binary_search([1,2,3,4,5,6],4))
+
+print(binary_search([1,2,3,4,5,6,7],5))
