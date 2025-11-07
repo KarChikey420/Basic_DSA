@@ -1,10 +1,9 @@
-def max_subarray(arr):
-    max_current=arr[0]
-    max_globle=arr[0]
+def max_sub_arr(arr):
+    current_max=arr[0]
+    global_max=arr[0]
     
     for i in range(1,len(arr)):
-        max_current=max(arr[i],max_current+arr[i])
-        max_globle=max(max_globle,max_current)
-    return max_globle
-
-print(max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+         current_max=max(arr[i],current_max+arr[i])  
+         global_max=max(global_max,current_max)
+        
+print(max_sub_arr([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
