@@ -1,16 +1,15 @@
 def palindrom(str1):
-    rev_str=""
+    reverse=""
     for i in str1:
-        rev_str=i+rev_str
+        reverse=i+reverse
     
-    if rev_str==str1:
+    if str1==reverse:
         return True
     else:
         return False
 
-if __name__=="__main__":
-    str1="ladal"
-    if palindrom(str1):
-        print("palindrom")
-    else:
-        print("not")
+str1="lebel"
+if palindrom(str1):
+    print("Palindrom")
+else:
+    print("Not Palindrom")
