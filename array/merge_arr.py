@@ -1,26 +1,26 @@
-def merge_arr(arr1,arr2):
-    merged=[]
+def merge_array(arr1,arr2):
+    merge_arr=[]
     i=0
     j=0
-    while i<len(arr1) and j<len(arr2):
+    while i<len(arr1)and j<len(arr2):
         if arr1[i]<arr2[j]:
-            merged.append(arr1[i])
+            arr1.append(i)
             i+=1
         else:
-            merged.append(arr2[j])
+            arr2.append(j)
             j+=1
-    
-    while i<len(arr1):
-        merged.append(arr1[i])
+            
+    if i<len(arr1):
+        arr1.append(i)
         i+=1
-    while j<len(arr2):
-        merged.append(arr2[j])
+    if j<len(arr2):
+        arr2.append(j)
         j+=1
     
-    return merged
+    return merge_arr
 
 arr1=[1,2,3]
 arr2=[3,4,5]
 
-merged=merge_arr(arr1,arr2)
+merged=merge_array(arr1,arr2)
 print(merged)
