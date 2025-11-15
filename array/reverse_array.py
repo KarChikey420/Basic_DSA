@@ -1,11 +1,11 @@
-def reversing_arr(arr):
+def reverse(arr):
     left=0
     right=len(arr)-1
     
-    while left<right:
+    if left<right:
         arr[left],arr[right]=arr[right],arr[left]
         left+=1
         right-=1
     return arr
 
-print(reversing_arr([1,2,3,4,5]))
+print(reverse([1,2,3,4,5,6]))
