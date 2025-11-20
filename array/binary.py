@@ -5,15 +5,12 @@ def binary_search(arr,target):
     while left<=right:
         mid=(left+right)//2
         
-        if arr[mid]==target:
+        if arr[left]==mid:
             return mid
-        
-        elif arr[mid]<target:
+        elif arr[left]<mid:
             left=mid+1
-        
         else:
             right=mid-1
-            
     return -1
 
 arr = [1, 3, 5, 7, 9, 11]
