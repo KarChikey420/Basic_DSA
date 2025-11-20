@@ -14,7 +14,7 @@
 # print(check_consacutive(arr))
 
 def check_consacutive(arr):
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
         current=arr[i]
         next_val=arr[i+1]
         
