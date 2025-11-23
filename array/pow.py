@@ -7,4 +7,4 @@ def myPow(x, n):
         if n<0:
             return 1/sqrt
         return sqrt
-print(myPow(2.00000, -2))
+print(myPow(2.00000, -2))  
