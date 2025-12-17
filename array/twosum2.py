@@ -10,4 +10,13 @@ def twoSum(numbers, target):
                 j-=1
             else:
                 return [i+1,j+1]
+
+def two_sum(arr,target):
+    mapp={}
+    for i,n in enumerate(arr):
+        diff=target-n
+        if diff in mapp:
+            return [mapp[diff],i]
+        mapp[n]=i
+        
 print(twoSum([2,7,11,15],9))
