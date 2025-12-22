@@ -1,5 +1,5 @@
 def second_largest(arr):
-   first=second=0
+   first=second=float('-inf')
    
    for i in range(len(arr)):
       if arr[i]>first:
