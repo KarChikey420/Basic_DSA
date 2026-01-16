@@ -1,24 +1,40 @@
-from fastapi import FastAPI
-from database import sessionmaker, engine, Base
-from model import User
+from fastapi import FastAPI, Depends, HTTPException
+from sqlalchemy.orm import Session
+from database import SessionLocal, engine
+import models
+import schemas
 
-app=FastAPI()
+models.Base.metadata.create_all(bind=engine)
 
-Base.metadata.create_all(bind=engine)
+app = FastAPI()
 
-@app.post("/users/")
-def create_user(user:User):
-    db=sessionmaker()
-    db.add(user)
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+@app.post("/users/", response_model=schemas.User)
+def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    db_user = models.User(username=user.username, email=user.email, password=user.password)
+    db.add(db_user)
     db.commit()
-    db.refresh(user)
-    db.close()
-    return user 
+    db.refresh(db_user)
+    return db_user
 
-@app.get("/users/{user_id}")
-def read_user(user_id:int):
-    db=sessionmaker()
-    user=db.query(User).filter(User.id==user_id).first()
-    db.close()
+@app.get("/users/{user_id}", response_model=schemas.User)
+def read_user(user_id: int,db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if user is None:
+        raise HTTPException(status_code=404, detail="User not found")
     return user
+
+@app.post("/users/{user_id}",response_model=schemas.User)
+def add_user(user:schemas.UserCreate,db:Session=Depends(get_db)):
+    db_user=models.User(username=user.username,email=user.email,password=user.password)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
