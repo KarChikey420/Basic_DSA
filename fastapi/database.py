@@ -11,5 +11,3 @@ engine=create_engine(DATABASE_URL,pool_pre_ping=True)
 sessionmaker=sessionmaker(autocommit=False,autoflush=False,bind=engine)
 Base=declarative_base()
 
-
-print("DataBase Connected Successfully")
