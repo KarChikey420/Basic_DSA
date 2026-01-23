@@ -1,28 +1,33 @@
 class Stack:
     def __init__(self):
-        self.values = []
-        
+        self.values=[]
+    
     def push(self, value):
-        self.values.append(value)
-        return self.values
-    
+        return self.values.append(value)
+        
     def pop(self):
-        if not self.values:
-            return "Stack is empty"
-        return self.values.pop()
+       if not self.values:
+           return None
+       return self.values.pop()
     
-    def display(self):
-        return self.values
+    def peek(self):
+        if not self.values:
+            return None
+        return self.values[-1]
+    
+    def print(self):
+        print(self.values)
 
-
-s = Stack()
-s.push(1)
-s.push(2)
-s.push(3)
-print(s.display())  
-
-s.pop()
-print(s.display()) 
-
-s.push(4)
-print(s.display()) 
+if __name__=="__main__":
+    stack=Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.print()
+    
+    stack.pop()
+    stack.print()
+    print("Top element:", stack.peek())
+    stack.print()
+   
+    
