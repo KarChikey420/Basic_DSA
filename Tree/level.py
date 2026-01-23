@@ -1,4 +1,4 @@
-from collections import dequeue
+from collections import deque
 
 def level_order_traversal(root):
     ans=[]
@@ -6,7 +6,7 @@ def level_order_traversal(root):
     if root is None:
         return ans
     
-    q=dequeue([root])
+    q=deque([root])
     
     while q:
         l=len(q)

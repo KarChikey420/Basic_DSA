@@ -1,26 +1,36 @@
 class Queue:
-    def __init__(self,values):
-        self.values=values
+    def __init__(self):
+        self.values=[]
+        self.front=-1
         
-    def enqueue(self,value):
-        self.values.append(value)
-        return self.values
+    def push(self, value):
+        if self.front==-1:
+            self.front=0
+        return self.values.append(value)
         
-    def dequeue(self):
-        return self.values.pop(0)
-    
-    def is_empty(self):
-        return len(self.values)==0
-    
-    def display(self):
-        return self.values
+    def pop(self):
+       if self.front==-1:
+           return None
+       x=self.values[self.front]
+       self.front+=1
+       if self.front>=len(self.values):
+           self.front=-1
+           self.values=[]
+       return x
     
     def peek(self):
-        return self.values[0]
+        if not self.values:
+            return None
+        return self.values[self.front]
     
-q=Queue([1,2,3,4,5])
-q.enqueue(6)
-print(q.display())
-q.dequeue()
-print(q.display())
-print(q.peek())
+    def print(self):
+        print(self.values)
+
+if __name__=="__main__":
+    queue=Queue()
+    queue.push(1)
+    queue.push(2)
+    queue.push(3)
+    queue.print()
+    print(queue.pop())
+    print("Top element:", queue.peek())
