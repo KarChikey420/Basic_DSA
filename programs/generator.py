@@ -1,9 +1,7 @@
-arr=[1,2,3,4,5,6]
-
-def my_generator(array):
-    i,j=0,1
-    for _ in range(1,len(array)-1):
+def generator(num):
+    i=0
+    j=1
+    for _ in range(1,num):
         yield i
-        i,j=j,i+j
-        
-print(list(my_generator(arr)))
+        i,j=i,i+j
+
